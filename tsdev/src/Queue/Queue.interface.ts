@@ -4,11 +4,13 @@ export interface IQueue<T> {
     peek(): T | undefined;
     length(): number;
     setCapacity(capacity:Number): void;
-    getCapacity(): void;
+    getCapacity(): number;
   }  
 
 export enum QueueErrorType {
-    QueueMaxSizeReached = "QueueMaxSizeReached!"
+    QueueMaxSizeReached = "QueueMaxSizeReached!",
+    QueueWrongType = "QueueWrongType!",
+    QueueMinSizeReached = "QueueMinSizeReached!"
 }
 
 export class QueueError extends Error {
